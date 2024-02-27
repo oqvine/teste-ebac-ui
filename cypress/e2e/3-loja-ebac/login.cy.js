@@ -49,5 +49,9 @@ describe('Funcionalidade: Login', () => {
         })
     
     });
-    ;
+    it('Deve fazer login com sucesso - Usando comandos customizados', () => {
+        cy.login('vinicius.teste@teste.com', 'teste@123')
+        cy.get('.woocommerce-MyAccount-content > :nth-child(2)').should('contain', 'Olá, vinicius.teste (não é vinicius.teste? Sair)')
+    
+    });
 })
